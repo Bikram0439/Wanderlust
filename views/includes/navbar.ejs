@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-md bg-white border-bottom sticky-top custom-navbar">
+  <div class="container-fluid">
+    <!-- Left Logo -->
+    <a class="navbar-brand d-flex align-items-center">
+      <i class="fa fa-compass me-2"></i>
+      <span class="brand-text">Wanderlust</span>
+    </a>
+
+    <!-- Mobile Toggle Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Links Section -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <ul class="navbar-nav align-items-center nav-links">
+        <li class="nav-item"><a class="nav-link" href="/listing">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/listing">All Listings</a></li>
+        <li class="nav-item"><a class="nav-link" href="/listing/new">Add New Listing</a></li>
+
+        <% if (!currUser) { %>
+          <li class="nav-item">
+            <a class="btn btn-outline-dark nav-btn me-2" href="/signup">Signup</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-danger nav-btn" href="/login">Login</a>
+          </li>
+        <% } else { %>
+          <li class="nav-item">
+            <a class="btn btn-danger nav-btn" href="/logout">Logout</a>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>

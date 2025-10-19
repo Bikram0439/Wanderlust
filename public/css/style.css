@@ -1,0 +1,224 @@
+body {
+  background-color: cadetblue;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+}
+
+/* ===== Navbar styling ===== */
+.custom-navbar {
+  height: 5rem;
+  background-color: white !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+/* Align items in container */
+.custom-navbar .container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.fa-compass {
+  color: #fe424d;
+  font-size: 2rem;
+}
+
+/* Brand text */
+.brand-text {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+/* Nav links layout */
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 25px; /* Equal space between all items */
+}
+
+/* Links style */
+.nav-links .nav-link {
+  font-weight: 500;
+  color: #333 !important;
+  transition: color 0.3s ease;
+}
+
+.nav-links .nav-link:hover {
+  color: #fe424d !important;
+}
+
+/* Buttons */
+.nav-btn {
+  padding: 6px 14px;
+  font-weight: 500;
+  border-radius: 10px;
+}
+
+/* ===== Footer styling ===== */
+.f-info-links a {
+  text-decoration: none;
+  color: #222222 !important;
+}
+
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.f-info-socials i {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+.f-info {
+  text-align: center;
+  display: flex;
+  height: 8rem;
+  background-color: #ebebeb;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-evenly;
+}
+
+/* ===== Card styling ===== */
+.card {
+  border: none !important;
+  margin-bottom: 2rem;
+}
+
+.card-img-top {
+  border-radius: 2rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
+.card-body {
+  padding: 0rem !important;
+}
+
+.listinglink {
+  text-decoration: none;
+}
+
+.card-img-overlay {
+  opacity: 0;
+}
+
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: #ebebeb;
+}
+
+/* Buttons */
+.add-btn {
+  background-color: #fe424d !important;
+  border: none !important;
+}
+
+.show-image {
+  height: 30vh;
+}
+
+/* ===== Mobile Navbar Button Styles Only ===== */
+@media (max-width: 768px) {
+  /* Navbar dropdown background */
+  .navbar-collapse {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    padding: 20px 0;
+    margin-top: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Modern card-like buttons for nav links */
+  .navbar-nav .nav-link {
+    width: 90%;
+    text-align: center;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: white !important;
+    padding: 12px 0;
+    margin: 4px 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  /* Hover effect */
+  .navbar-nav .nav-link:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Active state */
+  .navbar-nav .nav-link.active {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  }
+
+  /* Section separators between button groups */
+  .navbar-nav.mx-auto {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 15px 0;
+    margin: 10px 0;
+  }
+
+  /* Auth buttons with distinct colors */
+  .navbar-nav.ms-auto .nav-link {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+    border: none;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+  }
+
+  .navbar-nav.ms-auto .nav-link:hover {
+    background: linear-gradient(135deg, #ff5252, #e53935);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+  }
+
+  .navbar-nav.ms-auto .nav-link:first-child {
+    background: linear-gradient(135deg, #4ecdc4, #44a08d);
+    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
+  }
+
+  .navbar-nav.ms-auto .nav-link:first-child:hover {
+    background: linear-gradient(135deg, #26a69a, #00897b);
+    box-shadow: 0 6px 20px rgba(78, 205, 196, 0.6);
+  }
+
+  /* Icons styling */
+  .nav-link i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 576px) {
+  .navbar-nav .nav-link {
+    width: 95%;
+    padding: 14px 0;
+    font-size: 1rem;
+  }
+}
