@@ -27,21 +27,6 @@ const {isLogined, saveRedirectUrl,isOwner,isReviewAuthor}=require("./middileware
 const {storage}=require("./cloudConfig.js");
 const multer = require("multer");
 const upload = multer({storage});
-// const { console } = require("inspector");
-// const path = require("path");
-
-// const storage = multer.diskStorage({
-//   destination: function (req, file, cb) {
-//     cb(null, "uploads/"); // Make sure this folder exists
-//   },
-//   filename: function (req, file, cb) {
-//     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-//     cb(null, uniqueSuffix + path.extname(file.originalname));
-//   }
-// });
-
-// const upload = multer({ storage: storage });
-
 
 
 main()
@@ -63,7 +48,7 @@ async function main(){
  app.use(express.static(path.join(__dirname,"/public")));
 
 const sessionOptions = {
-    secret: "mycode",
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: {  
@@ -91,15 +76,6 @@ app.use((req,res,next)=>{
     next();
 })
 
-// app.get("/demouser", async (req, res) => {
-//     const fakeuser = new User({
-//         email: "bik@",
-//         username: "bikram"
-//     });
-
-//     const registeredUser = await User.register(fakeuser, "123mm");
-//     res.send(registeredUser);
-// });
 
 
 app.get("/signup",(req,res)=>{
@@ -210,20 +186,7 @@ const listing = await Listing.findById(req.params.id)
 });
 
 
-  //  app.post(
-  //   "/listing",
-  //   isLogined,
-  //   validatelisting,
-  //   wrapAsync(async (req,res,next)=>{
-  //    const newlisting= new Listing(req.body.listing);
-  //    newlisting.owner=req.user._id;
-  //    await newlisting.save();
-  //   req.flash("success", "New listing created");
-  //    res.redirect("/listing");
-  //   })
-  //  );
-
-
+ 
 
 
 app.post(
