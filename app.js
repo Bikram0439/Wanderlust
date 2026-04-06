@@ -157,8 +157,12 @@ app.get("/logout", (req, res, next) => {
      }
  }
  
+app.get("/",(req,res)=>{
+  res.redirect("/listings")
+})
 
-app.get("/listing",async(req,res)=>{
+
+app.get("/listings",async(req,res)=>{
     const alllisting= await Listing.find({});
     res.render("./listings/index.ejs",{alllisting});
 })
